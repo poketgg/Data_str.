@@ -3,7 +3,8 @@
 
 int main(void) {
 	int grade[10] = { "\0" };
-	int sum = 0, avg = 0;
+	int sum = 0;
+	double avg = 0;
 
 	srand(time(0));
 
@@ -14,7 +15,7 @@ int main(void) {
 		printf("학생 1 : %d 점\n", grade[i]);
 	}
 
-	avg = sum / 10;
+	avg = (double)sum / 10;
 	printf("점수 합계 : %d\n", sum);
-	printf("점수 평균 : %d", avg);
+	printf("점수 평균 : %.2f", avg);
 }
