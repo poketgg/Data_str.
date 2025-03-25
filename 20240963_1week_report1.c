@@ -12,7 +12,7 @@ int main(void) {
 		grade[i] = (rand() % 100) + 1;
 		sum += grade[i];
 
-		printf("학생 1 : %d 점\n", grade[i]);
+		printf("학생 %d : %d 점\n", i, grade[i]);
 	}
 
 	avg = (double)sum / 10;
