@@ -5,6 +5,8 @@ int main(void) {
 	int grade[10] = { "\0" };
 	int sum = 0, avg = 0;
 
+	srand(time(0));
+
 	for (int i = 0; i < 10; i++) {
 		grade[i] = (rand() % 100) + 1;
 		sum += grade[i];
