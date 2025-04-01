@@ -14,7 +14,6 @@ int isFull(Stack* s);
 void push(Stack* s, char str);
 int pop(Stack* s);
 void display(Stack* s);
-void freeStack(Stack* s);
 void reverseString(Stack* s, char str[]);
 
 
@@ -82,11 +81,6 @@ void display(Stack* s) {
 		printf("%c", s->data[i]);
 	}
 	printf("\n");
-}
-
-void freeStack(Stack* s) {
-	free(s->data);
-	printf("스택 메모리를 해제했습니다. \n");
 }
 
 void reverseString(Stack* s, char str[]) {
