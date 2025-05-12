@@ -28,7 +28,7 @@ void printQueue(PrintQueue* q);
 void cancelJob(PrintQueue* q, const char* targetName);
 void clearQueue(PrintQueue* q);
 
-int main() {
+int main(void) {
     PrintQueue q;
     initQueue(&q);
 
@@ -75,6 +75,8 @@ int main() {
             break;
         }
     }
+
+    return 0;
 }
 
 //큐 초기화
