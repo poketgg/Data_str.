@@ -19,7 +19,7 @@ int countLeaves(TreeNode* node);
 
 int getSum(TreeNode* node);
 int getMax(TreeNode* node);
-int searchRange(TreeNode* node, int min, int max);
+void searchRange(TreeNode* node, int min, int max);
 
 int main(void) {
     // 트리 구성
@@ -157,6 +157,19 @@ int getMax(TreeNode* node) {
     return max;
 }
 
-int searchRange(TreeNode* node, int min, int max) {
+void searchRange(TreeNode* node, int min, int max) {
+    if (node == NULL)
+        return;
 
+    // 왼쪽 서브트리 탐색
+    searchRange(node->left, min, max);
+
+    // 오른쪽 서브트리 탐색
+    searchRange(node->right, min, max);
+
+    // 현재 노드 값이 min과 max 사이일 때 출력
+    if (node->data >= min && node->data <= max)
+        printf("%d ", node->data);
+
+    
 }
