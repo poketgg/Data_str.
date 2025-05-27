@@ -141,18 +141,18 @@ int getSum(TreeNode* node) {
 }
 
 int getMax(TreeNode* node) {
-    int max = 0;
-
     if (node == NULL)
         return 0;
 
     int leftMax = getMax(node->left); // 왼쪽 서브트리 최댓값
     int rightMax = getMax(node->right); // 오른쪽 서브트리 최댓값
 
+    int max = node->data;
+
     if (leftMax > rightMax)
-        max += leftMax;
+        max = leftMax;
     else
-        max += rightMax;
+        max = rightMax;
 
     return max;
 }
