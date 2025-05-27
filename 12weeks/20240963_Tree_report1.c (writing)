@@ -131,16 +131,13 @@ int countLeaves(TreeNode* node) {
 }
 
 int getSum(TreeNode* node) {
-    int sum = 0;
-
     if (node == NULL)
         return 0;
 
     int leftSum = getSum(node->left); // 왼쪽 서브트리 합
     int rightSum = getSum(node->right); // 오른쪽 서브트리 합
 
-    sum = leftSum + rightSum;
-    return sum;
+    return node->data + leftSum + rightSum;
 }
 
 int getMax(TreeNode* node) {
