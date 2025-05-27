@@ -149,9 +149,9 @@ int getMax(TreeNode* node) {
 
     int max = node->data;
 
-    if (leftMax > rightMax)
+    if (leftMax > max)
         max = leftMax;
-    else
+    else if (rightMax > max)
         max = rightMax;
 
     return max;
