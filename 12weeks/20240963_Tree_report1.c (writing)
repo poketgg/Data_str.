@@ -8,6 +8,11 @@ typedef struct TreeNode {
 } TreeNode;
 
 TreeNode* createNode(int data);
+void preorder(TreeNode* node);
+void inorder(TreeNode* node);
+void postorder(TreeNode* node);
+void freeTree(TreeNode* node);
+
 int getHeight(TreeNode* node);
 int countNodes(TreeNode* node);
 int countLeaves(TreeNode* node);
@@ -66,6 +71,38 @@ TreeNode* createNode(int data) {
     node->left = NULL;
     node->right = NULL;
     return node;
+}
+
+void preorder(TreeNode* node) {
+    if (node == NULL) return;
+
+    printf("%d ", node->data);      // 1. 루트 방문
+    preorder(node->left);           // 2. 왼쪽 서브트리 순회
+    preorder(node->right);          // 3. 오른쪽 서브트리 순회
+}
+
+void inorder(TreeNode* node) {
+    if (node == NULL) return;
+
+    inorder(node->left);            // 1. 왼쪽 서브트리 순회
+    printf("%d ", node->data);     // 2. 루트 방문
+    inorder(node->right);          // 3. 오른쪽 서브트리 순회
+}
+
+void postorder(TreeNode* node) {
+    if (node == NULL) return;
+
+    postorder(node->left);         // 1. 왼쪽 서브트리 순회
+    postorder(node->right);        // 2. 오른쪽 서브트리 순회
+    printf("%d ", node->data);     // 3. 루트 방문
+}
+
+void freeTree(TreeNode* node) {
+    if (node == NULL) return;
+
+    freeTree(node->left);   // 왼쪽 서브트리 먼저 해제
+    freeTree(node->right);  // 오른쪽 서브트리 해제
+    free(node);             // 현재 노드 해제
 }
 
 int getHeight(TreeNode* node) {
